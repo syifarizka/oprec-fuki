@@ -2,6 +2,9 @@ from django.test import LiveServerTestCase, TestCase, tag
 from django.urls import reverse
 from selenium import webdriver
 
+from .models import MataKuliah, Tugas
+
+import datetime
 
 @tag('functional')
 class FunctionalTestCase(LiveServerTestCase):
@@ -31,6 +34,21 @@ class MainTestCase(TestCase):
         # You can also use path names instead of explicit paths.
         response = self.client.get(reverse('main:home'))
         self.assertEqual(response.status_code, 200)
+
+    # Test untuk models
+    def test_model_mataKuliah(self):
+        MataKuliah.objects.create(nama="DDP2", dosen="pak iik", sks=20, deskripsi="lorem", semester="Genap", tahun_ajar= "2020/2021")
+        data = MataKuliah.objects.all().count()
+        self.assertEquals(data, 1)
+
+    def test_model_tugas(self):
+        matkul = MataKuliah.objects.create(nama="DDP2", dosen="pak iik", sks=20, deskripsi="lorem", semester="Genap", tahun_ajar= "2020/2021")
+        # harus di tahun ajar??
+        tugas = Tugas.objects.create(name="TP 1", deadline= datetime.date.today(), mataKuliah=matkul)
+        data = Tugas.objects.all().count()
+        self.assertEquals(data, 1)
+
+    # Test untuk form
 
 
 class MainFunctionalTestCase(FunctionalTestCase):
