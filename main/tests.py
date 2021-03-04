@@ -49,6 +49,12 @@ class MainTestCase(TestCase):
         self.assertEquals(data, 1)
 
     # Test untuk form
+    # def test_form_feedback_valid(self):
+    #     form = Input_Form(data={'content':'PPW'})
+    #     self.assertTrue(form.is_valid())
+
+    #Test post request
+
 
 
 class MainFunctionalTestCase(FunctionalTestCase):
