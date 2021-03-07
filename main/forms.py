@@ -27,4 +27,4 @@ class Tugas_Form(forms.ModelForm):
         fields = ['name', 'deadline']
 
     name = forms.CharField(label='Nama Tugas', label_suffix="", required=True, max_length=250)
-    deadline = forms.DateField(label='Deadline', label_suffix="", required=True)
+    deadline = forms.DateField(label='Deadline', label_suffix="", required=True, widget=forms.DateInput(attrs={'type': 'date'}))
