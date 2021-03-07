@@ -6,6 +6,45 @@
 {% endblock meta %}
 
 {% block content %}
-  <h1>Hello, world!</h1>
-  <p><img src="{% static 'img/django-logo-negative.svg' %}"></p>
+<div class="container">
+  <div class="row">
+      <div class="col-sm-12">
+          <h1 class="h top-p"><mark id="mark">Tambah Mata Kuliah </mark></h1>
+      </div>
+      <div class="col-sm-6">
+          <form action="{% url 'main:savematkul' %}" method="POST">
+              {% csrf_token %}
+             <h3>{{ MataKuliah_Form.as_p}} </h3> 
+              <input class="submit btn" type="submit" value="Submit">
+          </form>
+          
+      </div>
+      <div class="col-sm-6">
+          {% if matkul %}
+          <table class="table table-borderless"> 
+              {% for i in matkul %}
+              <tr>
+                  <td>{{ i.nama }}</td>
+                  <td>
+                      <ul>
+                          {% for j in i.Tugas_set.all %}
+                          <li>
+                              {{ j.name }}
+                          </li>
+                          {% endfor %}
+                      </ul>
+                      <form action="{% url 'main:savetugas' pk=i.id %}" method="POST">
+                          {% csrf_token %}
+                          {{ Tugas_Form.as_p }}
+                          <button class="submit btn" type="submit">Tambah peserta</button>
+                      </form>
+                  </td>
+              </tr>
+              {% endfor %}
+          </table>
+          {% endif %}
+      </div>
+  </div>
+</div>
+
 {% endblock content %}

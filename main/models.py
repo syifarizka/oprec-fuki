@@ -6,11 +6,11 @@ class MataKuliah(models.Model):
     dosen = models.CharField(max_length=250)
     sks = models.IntegerField()
     deskripsi = models.TextField()
-    semester = models.CharField(max_length=6)
+    semester = models.CharField(max_length=9)
     tahun_ajar = models.CharField(max_length=250)
 
 class Tugas(models.Model):
-    name = models.CharField(max_length=125, default='none')
+    name = models.CharField(max_length=250, default='none')
     deadline = models.DateField()
     mataKuliah = models.ForeignKey(MataKuliah, on_delete=models.CASCADE, default='none', null=True, blank=True)
 
