@@ -4,8 +4,6 @@
 
 body {
   font-family: 'DM Sans';
-  font-size: 22px;
-
   background-color:#f1f3f6;
   margin: 0;
 }
@@ -16,18 +14,22 @@ body {
 }
 
 p {
+  font-size: 1em;
   color : #424242;
 }
 
 h1 {
+  font-size: 3em;
   color : #9bba47;
 }
 
 h2 {
+  font-size: 1.5em;
   color : #7bbacf;
 }
 
 h3 {
+  font-size: 1.5em;
   color : #9bba47;
 }
 
@@ -39,4 +41,8 @@ h3 {
 .small-button {
   color :#f1f3f6;
   background-color: #9bba47;
+}
+
+.small-card {
+  overflow-y: auto;
 }
