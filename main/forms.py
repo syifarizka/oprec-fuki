@@ -17,7 +17,7 @@ class MataKuliah_Form(forms.ModelForm):
     nama = forms.CharField(label='Nama Mata Kuliah', label_suffix="", required=True, max_length=250)
     dosen = forms.CharField(label='Dosen', label_suffix="", required=True, max_length=250)
     sks = forms.IntegerField(label='Jumlah SKS', label_suffix="", required=True)
-    deskripsi = forms.CharField(label='Deskripsi', label_suffix="", required=True, widget=forms.Textarea(attrs={'type':'text', 'style':'width:50%'}))
+    deskripsi = forms.CharField(label='Deskripsi', label_suffix="", required=True, widget=forms.Textarea(attrs={'type':'text'}))
     semester = forms.CharField(label='Semester', label_suffix="", required=True, widget=forms.Select(choices=SEMESTER_CHOICES))
     tahun_ajar = forms.CharField(label='Tahun Ajar', label_suffix="", required=True, widget=forms.Select(choices=TAHUN_CHOICES))
 

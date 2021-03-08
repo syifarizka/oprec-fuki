@@ -10,7 +10,7 @@
   <div class="row">
 
       <div class="col-sm-12">
-          <h1 class="h top-p"><mark id="mark">Tambah Mata Kuliah </mark></h1>
+          <h1>Tambah Mata Kuliah</h1>
       </div>
 
 
@@ -20,7 +20,7 @@
             <form action="{% url 'main:savematkul' %}" method="POST">
               {% csrf_token %}
               <h3>{{ MataKuliah_Form.as_p}} </h3> 
-              <input class="submit btn" type="submit" value="Submit">
+              <input class="submit button" type="submit" value="Submit">
             </form>  
           </div>
         </div> 
@@ -65,7 +65,7 @@
                         <form action="{% url 'main:savetugas' pk=i.id %}" method="POST">
                           {% csrf_token %}
                           <ul style="display: inline;">{{ Tugas_Form.as_ul }}</ul>
-                          <button class="submit" type="submit">Tambah</button>
+                          <button class="submit small-button" type="submit">Tambah</button>
                         </form>
                       </td>
                     </tr>
