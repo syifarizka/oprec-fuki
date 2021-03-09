@@ -43,7 +43,6 @@ class MainTestCase(TestCase):
 
     def test_model_tugas(self):
         matkul = MataKuliah.objects.create(nama="DDP2", dosen="pak iik", sks=20, deskripsi="lorem", semester="Genap", tahun_ajar= "2020/2021")
-        # harus di tahun ajar??
         tugas = Tugas.objects.create(name="TP 1", deadline= datetime.date.today(), mataKuliah=matkul)
         data = Tugas.objects.all().count()
         self.assertEquals(data, 1)
