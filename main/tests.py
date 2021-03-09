@@ -48,15 +48,6 @@ class MainTestCase(TestCase):
         data = Tugas.objects.all().count()
         self.assertEquals(data, 1)
 
-    # Test untuk form
-    # def test_form_feedback_valid(self):
-    #     form = Input_Form(data={'content':'PPW'})
-    #     self.assertTrue(form.is_valid())
-
-    #Test post request
-
-
-
 class MainFunctionalTestCase(FunctionalTestCase):
     def test_root_url_exists(self):
         self.selenium.get(f'{self.live_server_url}/')

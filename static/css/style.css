@@ -13,13 +13,20 @@ body {
   color: #f1f3f6;
 }
 
+.footer {
+  background-color:#7bbacf;
+  color: #f1f3f6;
+  text-align: center;
+}
+
 p {
   font-size: 1em;
   color : #424242;
 }
 
 h1 {
-  font-size: 3em;
+  font-size: 2em;
+  font-weight: bold;
   color : #9bba47;
 }
 
@@ -34,13 +41,25 @@ h3 {
 }
 
 .button{
+  width: 80px;
+  height: 36px;
+  border-radius: 10px;
+  font-size: 0.8em;
+  border: 1px solid #ffffff;
+  cursor: pointer;
   color :#f1f3f6;
   background-color: #7bbacf;
 }
 
 .small-button {
+  width: 60px;
+  height: 25px;
+  border-radius: 10px;
+  cursor: pointer;
   color :#f1f3f6;
   background-color: #9bba47;
+  border: 1px solid #ffffff;
+  font-size: 0.7em;
 }
 
 .small-card {
